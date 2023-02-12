@@ -24,12 +24,11 @@ export const provideArtistEvent = () => {
           title: d.title || eventTitles[index].name,
         };
       });
-      featuredEvents.value = mappedData;
-      allEvents.value = mappedData.slice(2);
+
+      allEvents.value = featuredEvents.value = mappedData;
       isloading.value = false;
     } catch (error) {
       isloading.value = false;
-      console.log(error);
     }
   };
 

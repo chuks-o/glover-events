@@ -1,7 +1,7 @@
 <template>
   <AppCard
     class="bg-white rounded-10 w-full"
-    :class="{ 'p-4': isLarge, 'p-3': isSmall, 'shadow-sm': isSmall }"
+    :class="{ 'p-4': isLarge, ' shadow-sm p-3': isSmall }"
   >
     <template #header>
       <img
@@ -76,14 +76,9 @@
           </div>
         </div>
 
-        <a
-          :href="props.data?.url"
-          target="_blank"
-          :class="{ 'mt-4 text-xs': isSmall }"
-          class="flex items-center justify-center font-semibold text-base border-1.3 text-glover-purple border-glover-purple rounded-lg px-5 py-2.5 w-max cursor-pointer mb-2 mt-5"
-        >
+        <AppLink :href="props.data?.url" :class="{ 'mt-4 text-xs': isSmall }">
           Buy Ticket
-        </a>
+        </AppLink>
       </div>
     </template>
   </AppCard>
@@ -98,6 +93,7 @@ import type { ArtistEvent } from "@/types/ArtistEvent";
 import AppText from "../AppText/AppText.vue";
 import AppCard from "../AppCard/AppCard.vue";
 import AppDateView from "../AppDateView/AppDateView.vue";
+import AppLink from "../AppLink/AppLink.vue";
 
 type Size = "large" | "small";
 const props = defineProps<{
