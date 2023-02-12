@@ -5,8 +5,9 @@ export const useFetch = () => {
     endpoint: string,
     method: HttpMethods = "GET",
     parameters: Record<string, unknown> = {}
-  ): Promise<never | T> => {
+  ): Promise<T | never> => {
     {
+      let data = {} as Promise<T>;
       const options: {
         method: HttpMethods;
         body?: string;
@@ -17,11 +18,11 @@ export const useFetch = () => {
 
       try {
         const response = await fetch(`${endpoint}`, options);
-        const data = (await response.json()) as Promise<T>;
+        data = (await response.json()) as Promise<T>;
         return data;
-      } catch (error) {
-        return error.response;
-      }
+      } catch (error) {}
+
+      return data;
     }
   };
 
