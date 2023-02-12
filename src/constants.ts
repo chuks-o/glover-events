@@ -10,7 +10,7 @@ export const eventTitles = [
       "https://www.billboard.com/wp-content/uploads/2022/05/Screen-Shot-2022-05-15-at-6.11.28-PM.png?w=942&h=623&crop=1",
   },
   {
-    name: "A crusade with Blaqbones and the boys",
+    name: "Breaking the yoke of love",
     image: "https://photos.bandsintown.com/large/14225788.jpeg",
   },
   {

@@ -14,7 +14,7 @@
       class="relative"
       :items-to-show="2"
       :items-to-scroll="1"
-      :wrap-around="false"
+      :wrap-around="true"
       :breakpoints="breakpoints"
     >
       <template #slides>
@@ -83,7 +83,7 @@ const breakpoints = {
 }
 
 .carousel__prev {
-  left: -25px;
+  display: none;
 }
 
 @media (min-width: 767px) {
